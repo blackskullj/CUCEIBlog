@@ -26,6 +26,7 @@
                                 <td width="10px">
                                     <a href="{{ route('tags.show', $tag->id) }}" class="btn btn-sm btn-primary">Ver</a>
                                 </td>
+                                @if (Auth::user()->administrator)
                                 <td width="10px">
                                     <a href="{{ route('tags.edit', $tag->id) }}"
                                         class="btn btn-sm btn-warning">Editar</a>
@@ -35,6 +36,7 @@
                                     <button class="btn btn-sm btn-danger">Eliminar</button>
                                     {!! Form::close() !!}
                                 </td>
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>

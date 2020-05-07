@@ -20,6 +20,9 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('career', 4);
+            $table->enum('occupation', ['alumno', 'profesor']);
+            $table->boolean('administrator')->default(0);
             $table->timestamps();
         });
     }

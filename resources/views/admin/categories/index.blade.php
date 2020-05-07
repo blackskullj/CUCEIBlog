@@ -27,6 +27,7 @@
                                     <a href="{{ route('categories.show', $category->id) }}"
                                         class="btn btn-sm btn-primary">Ver</a>
                                 </td>
+                                @if (Auth::user()->administrator)
                                 <td width="10px">
                                     <a href="{{ route('categories.edit', $category->id) }}"
                                         class="btn btn-sm btn-warning">Editar</a>
@@ -37,6 +38,7 @@
                                     <button class="btn btn-sm btn-danger">Eliminar</button>
                                     {!! Form::close() !!}
                                 </td>
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>

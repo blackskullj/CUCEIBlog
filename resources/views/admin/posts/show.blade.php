@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <p><strong>Titulo</strong> {{ $post->title }}</p>
                     <p><strong>Slug</strong> {{ $post->slug }}</p>
-                    <p><strong>Contenido</strong> {{ $post->body }}</p>
+                    <p><strong>Contenido</strong> {!! $post->body !!}</p>
                 </div>
             </div>
         </div>

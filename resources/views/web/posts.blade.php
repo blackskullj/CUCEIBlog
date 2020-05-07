@@ -8,7 +8,7 @@
             @foreach ($posts as $post)
             <div class="card">
                 <div class="card-header">
-                    {{ $post->title }}
+                    {{ $post->title }} <div class="float-right"> {{ $post->created_at }} </div>
                 </div>
                 <div class="card-body">
                     @if ($post->file)
