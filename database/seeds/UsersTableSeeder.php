@@ -15,6 +15,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Jonathan Nunez',
             'email' => 'jonathan@correo.com',
             'password' => bcrypt('1234'),
+            'email_verified_at' => now(),
             'career' => 'INNI',
             'occupation' => 'alumno',
             'administrator' => 1

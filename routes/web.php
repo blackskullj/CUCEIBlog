@@ -19,13 +19,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', 'blog');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('blog', 'Web\PageController@blog')->name('blog');
 Route::get('blog/{slug}', 'Web\PageController@post')->name('post');
 Route::get('category/{slug}', 'Web\PageController@category')->name('category');
 Route::get('tag/{slug}', 'Web\PageController@tag')->name('tag');
 
-Route::resource('tags', 'Admin\TagController');
-Route::resource('categories', 'Admin\CategoryController');
-Route::resource('posts', 'Admin\PostController');
+Route::group(['middleware' => 'verified'], function ()
+{
+    Route::resource('tags', 'Admin\TagController');
+    Route::resource('categories', 'Admin\CategoryController');
+    Route::resource('posts', 'Admin\PostController');
+});
